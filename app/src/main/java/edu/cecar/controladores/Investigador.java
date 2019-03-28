@@ -13,7 +13,6 @@
 
 package edu.cecar.controladores;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,6 +38,7 @@ public class Investigador {
     }
 
     public List<String> getArregloInvestigacion() {
+
         return arregloInvestigacion;
     }
 

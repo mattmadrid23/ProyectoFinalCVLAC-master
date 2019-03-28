@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         lista = findViewById(R.id.miLista);
 
         Button btObtenerDatosCVLac = findViewById(R.id.btObtenerDatos);
+
         btObtenerDatosCVLac.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 extraerDatosCVLAC();
