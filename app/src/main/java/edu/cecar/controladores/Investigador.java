@@ -14,24 +14,21 @@
 package edu.cecar.controladores;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
   Esta clase modela los datos de un Investigador
 */
 
 public class Investigador {
-
     private String nombres;
     private String nacionalidad;
     private String sexo;
     private String prueba;
-    //private String[] arregloInvestigacion;
-    private ArrayList<String> arregloInvestigacion;
+    private List<String> arregloInvestigacion;
     private boolean categorizado;
 
-
-
-    public Investigador(String nombres, String nacionalidad, String sexo, String prueba,ArrayList arregloInvestigacion, boolean categorizado) {
+    public Investigador(String nombres, String nacionalidad, String sexo, String prueba, ArrayList arregloInvestigacion, boolean categorizado) {
 
         this.nombres = nombres;
         this.nacionalidad = nacionalidad;
@@ -39,14 +36,13 @@ public class Investigador {
         this.prueba = prueba;
         this.arregloInvestigacion = arregloInvestigacion;
         this.categorizado = categorizado;
-
     }
 
-    public ArrayList<String> getArregloInvestigacion() {
+    public List<String> getArregloInvestigacion() {
         return arregloInvestigacion;
     }
 
-    public void setArregloInvestigacion(ArrayList<String> arregloInvestigacion) {
+    public void setArregloInvestigacion(List<String> arregloInvestigacion) {
         this.arregloInvestigacion = arregloInvestigacion;
     }
 
@@ -81,7 +77,6 @@ public class Investigador {
     public boolean isCategorizado() {
         return categorizado;
     }
-
 
     @Override
     public String toString() {
