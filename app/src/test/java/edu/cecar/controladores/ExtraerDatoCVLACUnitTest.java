@@ -76,6 +76,7 @@ public class ExtraerDatoCVLACUnitTest {
 
         assertEquals(investigacion,investigador.getArregloInvestigacion().get(1));
     }
+
     @Test
     public void testDatosCVLAC3(){
 
@@ -84,20 +85,15 @@ public class ExtraerDatoCVLACUnitTest {
                 "ias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
 
         //Se define los datos esperados
-
         String investigacion="control de calidad de alimentos, Activa:Si";
         String investigacion2="Tecnologìa y Calidad en la industria del Alimento Calidad en alimento, Activa:Si";
         String investigacion3="contaminación ambiental, Activa:Si";
 
         //se comparan ambos datos
 
-
         assertEquals(investigacion,investigador.getArregloInvestigacion().get(1));
         assertEquals(investigacion2,investigador.getArregloInvestigacion().get(2));
         assertEquals(investigacion3,investigador.getArregloInvestigacion().get(3));
     }
-
-
-
 }
 
