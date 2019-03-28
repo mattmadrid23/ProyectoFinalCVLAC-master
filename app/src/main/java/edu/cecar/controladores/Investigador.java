@@ -28,7 +28,7 @@ public class Investigador {
     private List<String> arregloInvestigacion;
     private boolean categorizado;
 
-    public Investigador(String nombres, String nacionalidad, String sexo, String prueba, ArrayList arregloInvestigacion, boolean categorizado) {
+    public Investigador(String nombres, String nacionalidad, String sexo, String prueba, List arregloInvestigacion, boolean categorizado) {
 
         this.nombres = nombres;
         this.nacionalidad = nacionalidad;

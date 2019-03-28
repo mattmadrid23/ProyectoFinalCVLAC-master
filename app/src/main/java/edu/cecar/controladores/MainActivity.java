@@ -44,32 +44,26 @@ public class MainActivity extends AppCompatActivity {
                 Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colc" +
                         "iencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
                 adicionarDatosCasillasTexto(investigador);
-
             }
 
         }).start();
     }
 
     public void adicionarDatosCasillasTexto(final Investigador investigador) {
-
         runOnUiThread(new Runnable() {
 
             @Override
             public void run() {
-
                 teNombres.setText(investigador.getNombres());
                 teNacionalidad.setText(investigador.getNacionalidad());
                 teSexo.setText(investigador.getSexo());
                 teCategoria.setText(investigador.isCategorizado() ? "Si" : "No");
                 textInputEditText.setText(investigador.getPrueba());
 
-                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,investigador.getArregloInvestigacion());
+                ArrayAdapter<String> adaptador = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_1,investigador.getArregloInvestigacion());
 
                 lista.setAdapter(adaptador);
-
-            }
+           }
         });
-
     }
-
 }
