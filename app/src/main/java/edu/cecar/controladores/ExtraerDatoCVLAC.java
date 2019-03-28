@@ -55,10 +55,10 @@ public class ExtraerDatoCVLAC {
             String investigaciones=filaTablaInvestigacion.get(0).select("td").get(0).text();
             String investigaciones2=filaTablaInvestigacion2.get(0).select("td").get(0).text();
 
-            System.out.printf("hhh"+nombre,nacionalidad,sexo);
+            //  "System. " out.printf "("hhh"+nombre,nacionalidad,sexo);"
 
-            ArrayList<String> arreglo = new ArrayList<String>();
-            ArrayList<String> arreglovacio = new ArrayList<String>();
+            ArrayList<String> arreglo = new ArrayList<>();
+            ArrayList<String> arreglovacio = new ArrayList<>();
 
 
             //comprobamos si existe Linea de investigacion
@@ -66,20 +66,21 @@ public class ExtraerDatoCVLAC {
                 //Se crea el objeto investigador
                 for (int i = 0; i<tam; i++) {
                     arreglo.add(i,filaTablaInvestigacion.get(i).select("td").get(0).text());
-                 //   System.  out.  println(arreglo.get(i));
+                 //   System.  "out.  "println(arreglo.get(i));
                 }
 
                 investigador = new Investigador(nombre, nacionalidad, sexo, investigaciones,arreglo,true);
 
-                System.out.println("gggggg"+existeInvestigacion);
+                // "System. "out. "println("gggggg"+existeInvestigacion);
             }else {
                    if (existeInvestigacion2.equals("Líneas de investigación")){
                    //Se crea el objeto investigador
                        for (int i = 0; i<tam2; i++) {
                             arreglo.add(i,filaTablaInvestigacion2.get(i).select("td").get(0).text());
-                            System.out.println(arreglo.get(i));}
+                            //  "System.  "out.  println("arreglo.get(i));"
+                       }
                             investigador = new Investigador(nombre, nacionalidad, sexo, investigaciones2,arreglo,true);
-                            System.out.println("gggggg"+existeInvestigacion);
+                           // "System.  "out.println("gggggg"+existeInvestigacion);
                        }
                    else {
                         investigador = new Investigador(nombre, nacionalidad, sexo,"No Posee Lineas de investigacion",arreglovacio, true);
