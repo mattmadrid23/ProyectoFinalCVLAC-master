@@ -29,25 +29,18 @@ public class MainActivity extends AppCompatActivity {
         textInputEditText = findViewById(R.id.teInvestigaciones);
         lista = findViewById(R.id.miLista);
 
-
-
-
         Button btObtenerDatosCVLac = findViewById(R.id.btObtenerDatos);
         btObtenerDatosCVLac.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
                 extraerDatosCVLAC();
-
             }
         });
     }
 
     public void extraerDatosCVLAC() {
-
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colc" +
                         "iencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
                 adicionarDatosCasillasTexto(investigador);
@@ -55,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }).start();
-
     }
 
     public void adicionarDatosCasillasTexto(final Investigador investigador) {

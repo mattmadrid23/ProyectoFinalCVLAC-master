@@ -25,18 +25,15 @@ public class ExtraerDatoCVLAC {
             Element tablas = documentoHTML.select(table).get(1); //Se obtiene la primera tabla
             Element tablasInvestigacion = documentoHTML.select(table).get(7); //Se obtiene la septima tabla
             Element tablasInvestigacion2 = documentoHTML.select(table).get(6);
-            //Element tablasInvestigacion3 = documentoHTML.select("table").get(8);
 
             Elements filasTabla = tablas.select("tr"); // Se obtienen las filas de la tabla
             Elements filaTablaInvestigacion = tablasInvestigacion.select("tr");//
             Elements filaTablaInvestigacion2 = tablasInvestigacion2.select("tr");
-           // Elements filaTablaInvestigacion3 = tablasInvestigacion3.select("tr");
 
             int filaNombre = 0;
             int filanacionalidad = 2;
             int filaSexo =3;
             //se crea la fila investigacion
-           // int filaInvestigacion=0;
 
             if (filasTabla.size()>4){
                 filaNombre =2;
@@ -49,22 +46,16 @@ public class ExtraerDatoCVLAC {
             String nacionalidad = filasTabla.get(filanacionalidad).select("td").get(1).text();
             String sexo = filasTabla.get(filaSexo).select("td").get(1).text();
 
-            ////
-
-            int tamaño = filaTablaInvestigacion.size();
-            int tamaño2 = filaTablaInvestigacion2.size();
-           // int tamaño3 = filaTablaInvestigacion3.size();
+            int tam = filaTablaInvestigacion.size();
+            int tam2 = filaTablaInvestigacion2.size();
 
             String existeInvestigacion = filaTablaInvestigacion.get(0).select("td").get(0).text();
             String existeInvestigacion2 = filaTablaInvestigacion2.get(0).select("td").get(0).text();
-            //String existeInvestigacion3 = filaTablaInvestigacion3.get(0).select("td").get(0).text();
 
             String investigaciones=filaTablaInvestigacion.get(0).select("td").get(0).text();
             String investigaciones2=filaTablaInvestigacion2.get(0).select("td").get(0).text();
-            //String investigaciones3=filaTablaInvestigacion3.get(0).select("td").get(0).text();
 
             System.out.printf("hhh"+nombre,nacionalidad,sexo);
-
 
             ArrayList<String> arreglo = new ArrayList<String>();
             ArrayList<String> arreglovacio = new ArrayList<String>();
@@ -73,21 +64,18 @@ public class ExtraerDatoCVLAC {
             //comprobamos si existe Linea de investigacion
            if (existeInvestigacion.equals("Líneas de investigación")){
                 //Se crea el objeto investigador
-               // investigador = new Investigador(nombre, nacionalidad, sexo, "No posee linea de investigacion",arreglo,true);
-                for (int i = 0; i<tamaño; i++) {
-
-
+                for (int i = 0; i<tam; i++) {
                     arreglo.add(i,filaTablaInvestigacion.get(i).select("td").get(0).text());
+                 //   System.  out.  println(arreglo.get(i));
+                }
 
-                    System.out.println(arreglo.get(i));}
                 investigador = new Investigador(nombre, nacionalidad, sexo, investigaciones,arreglo,true);
 
                 System.out.println("gggggg"+existeInvestigacion);
-
             }else {
                    if (existeInvestigacion2.equals("Líneas de investigación")){
                    //Se crea el objeto investigador
-                       for (int i = 0; i<tamaño2; i++) {
+                       for (int i = 0; i<tam2; i++) {
                             arreglo.add(i,filaTablaInvestigacion2.get(i).select("td").get(0).text());
                             System.out.println(arreglo.get(i));}
                             investigador = new Investigador(nombre, nacionalidad, sexo, investigaciones2,arreglo,true);
@@ -100,8 +88,6 @@ public class ExtraerDatoCVLAC {
         // i
         } catch (IOException e) {
             Log.e("MYAPP", "exception: " + e.getMessage());
-
-            e.printStackTrace();
         }
         return investigador;
     }
