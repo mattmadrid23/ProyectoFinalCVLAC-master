@@ -55,11 +55,13 @@ public class Investigador {
     }
 
     public void setNombres(String nombres) {
-            this.nombres = nombres;
+
+        this.nombres = nombres;
     }
 
     public String getNacionalidad() {
-            return nacionalidad;
+
+        return nacionalidad;
     }
 
     public void setNacionalidad(String nacionalidad) {

@@ -80,7 +80,7 @@ public class ExtraerDatoCVLAC {
                         investigador = new Investigador(nombre, nacionalidad, sexo,"No Posee Lineas de investigacion",arreglovacio, true);
                     }
            }
-        // i
+
         } catch (IOException e) {
             Log.e("MYAPP", "exception: " + e.getMessage());
         }
