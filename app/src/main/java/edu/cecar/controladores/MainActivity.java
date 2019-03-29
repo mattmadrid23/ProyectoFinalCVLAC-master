@@ -39,18 +39,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void extraerDatosCVLAC() {
-       new Thread(new Runnable() {
-            public void run() {
+        Runnable task1 = new Runnable(){
+            @Override
+            public void run(){
                 Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colc" +
                         "iencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
                 adicionarDatosCasillasTexto(investigador);
             }
-        }).start();
+        };
+        Thread thread1 = new Thread(task1);
+        thread1.start();
     }
 
     public void adicionarDatosCasillasTexto(final Investigador investigador) {
         runOnUiThread(new Runnable() {
-
             @Override
             public void run() {
                 teNombres.setText(investigador.getNombres());
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 ArrayAdapter<String> adaptador = new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_list_item_1,investigador.getArregloInvestigacion());
 
                 lista.setAdapter(adaptador);
-           }
+            }
         });
     }
 }
