@@ -29,17 +29,13 @@ public class ExtraerDatoCVLACUnitTest {
                 "ov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000787132");
 
         // Se define los datos esperados
-
         //Luty Del Carmen Gomezcaceres Peréz
-
         String nombreInvestigador1="Guillermo Carlos Hernández Hernández";
         String nombreInvestigador2="Namuel Francisco Solórzano Peralta";
 
         // Se comprueba o testea el valor esperado con el obtenido
-
         assertEquals(nombreInvestigador1,investigador1.getNombres());
         assertEquals(nombreInvestigador2,investigador2.getNombres());
-     
     }
 
     @Test

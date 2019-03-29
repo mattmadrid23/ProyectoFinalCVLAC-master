@@ -58,7 +58,6 @@ public class ExtraerDatoCVLAC {
             ArrayList<String> arreglo = new ArrayList<>();
             ArrayList<String> arreglovacio = new ArrayList<>();
 
-
             //comprobamos si existe Linea de investigacion
            if (existeInvestigacion.equals("Líneas de investigación")){
                 //Se crea el objeto investigador
