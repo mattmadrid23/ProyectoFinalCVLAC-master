@@ -39,15 +39,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void extraerDatosCVLAC() {
-        Runnable task3 = new Runnable() {
-            @Override
+              new Thread(new Runnable() {
             public void run() {
                 Investigador investigador = ExtraerDatoCVLAC.getDatos("http://scienti.colc" +
                         "iencias.gov.co:8081/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000402478");
-                MainActivity.this.adicionarDatosCasillasTexto(investigador);
+                adicionarDatosCasillasTexto(investigador);
             }
-        };
-        new Thread(task3).start();
+        }).start();
     }
 
     public void adicionarDatosCasillasTexto(final Investigador investigador) {
